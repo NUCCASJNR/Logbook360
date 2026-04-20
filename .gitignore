@@ -8,12 +8,6 @@ logs/
 djnago.log
 dump.rdb
 .env
-#**/migrations/*
-#/apps/chat/migrations/
-#/apps/common/migrations/
-#/apps/courses/migrations/
-#/apps/reports/
-#/apps/users/migrations/
 *.log
 *.json
 backend/.venv/
