@@ -50,7 +50,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     # "honeybadger.contrib.DjangoHoneybadgerMiddleware",
-    "apps.users.middleware.PutAsPostMiddleware",
+    # "apps.users.middleware.PutAsPostMiddleware",
     # "silk.middleware.SilkyMiddleware",
 ]
 
@@ -88,6 +88,7 @@ CLOUDINARY_URL = os.getenv("CLOUDINARY_URL")
 
 ASGI_APPLICATION = "config.asgi.application"
 WSGI_APPLICATION = "config.wsgi.application"
+
 AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
     "utils.backends.CustomBackend"
@@ -200,15 +201,6 @@ TEMPLATES = [
 ]
 
 
-DATA_UPLOAD_MAX_NUMBER_FIELDS = 52428800
-
-# settings.py
-DATA_UPLOAD_MAX_MEMORY_SIZE = 52428800  # 50MB
-FILE_UPLOAD_MAX_MEMORY_SIZE = 10485760  # 10MB
-
-INTERNAL_IPS = [
-    "127.0.0.1",  # Localhost
-]
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -216,5 +208,4 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
-]
-NINJA_PAGINATION_CLASS = "utils.paginate.CustomPagination"
+    ]
