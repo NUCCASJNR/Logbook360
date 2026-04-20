@@ -1,0 +1,1 @@
+ ### Logbook360 is a web-based SIWES and industrial training management system that enables students to log daily activities, supervisors to review and approve entries, and administrators to manage student-supervisor assignments. The system automates weekly and monthly reporting to replace traditional paper logbooks.
