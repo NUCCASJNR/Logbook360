@@ -30,7 +30,7 @@ class StudentProfile(BaseModel):
 
     # Current SIWES session
     session = models.ForeignKey(
-        "SIWESSession",
+        "siwes_sessions.SIWESSession",
         on_delete=models.CASCADE,
         related_name="students"
     )

@@ -10,13 +10,8 @@ class SIWESSession(BaseModel):
     name = models.CharField(max_length=255)
     start_date = models.DateField()
     end_date = models.DateField()
+    is_active = models.BooleanField(default=True)
 
-
-    def clean(self):
-        from django.core.exceptions import ValidationError
-
-        if self.end_date <= self.start_date:
-            raise ValidationError("End date must be after start date")
 
     def __str__(self):
-        return f"{self.name} ({self.school.name})"
+        return f"{self.name} - {self.school.name}"
