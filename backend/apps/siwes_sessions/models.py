@@ -12,6 +12,10 @@ class SIWESSession(BaseModel):
     end_date = models.DateField()
     is_active = models.BooleanField(default=True)
 
+    class Meta:
+        db_table = "siwes_sessions"
+        verbose_name = "SIWES Session"
+        verbose_name_plural = "SIWES Sessions"
 
     def __str__(self):
         return f"{self.name} - {self.school.name}"

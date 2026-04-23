@@ -35,6 +35,11 @@ class StudentProfile(BaseModel):
         related_name="students"
     )
 
+    class Meta:
+        db_table = "student_profile"
+        verbose_name = "Student Profile"
+        verbose_name_plural = "Student Profiles"
+
     def __str__(self):
         return f"{self.user.email} ({self.matric_number})"
 
@@ -55,6 +60,11 @@ class SupervisorProfile(models.Model):
     max_students = models.PositiveIntegerField(default=10)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        db_table = "supervisor_profile"
+        verbose_name = "Supervisor Profile"
+        verbose_name_plural = "Supervisor Profiles"
+
     def __str__(self):
         return f"{self.user.email}"
 
@@ -66,6 +76,11 @@ class Department(BaseModel):
         related_name="departments"
     )
     name = models.CharField(max_length=255)
+
+    class Meta:
+        db_table = "departments"
+        verbose_name = "Department"
+        verbose_name_plural = "Departments"
 
     def __str__(self):
         return self.name

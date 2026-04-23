@@ -15,6 +15,11 @@ class WeeklyReview(BaseModel):
         on_delete=models.CASCADE
     )
 
+    class Meta:
+        db_table = "weekly_reviews"
+        verbose_name = "Weekly Review"
+        verbose_name_plural = "Weekly Reviews"
+
 
 class MonthlyReview(BaseModel):
     logbook = models.ForeignKey(
@@ -29,3 +34,8 @@ class MonthlyReview(BaseModel):
         SupervisorProfile,
         on_delete=models.CASCADE
     )
+
+    class Meta:
+        db_table = "monthly_reviews"
+        verbose_name = "Monthly Review"
+        verbose_name_plural = "Monthly Reviews"

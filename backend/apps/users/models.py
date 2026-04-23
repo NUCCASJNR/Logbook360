@@ -12,6 +12,11 @@ class School(BaseModel):
     name = models.TextField()
     address = models.TextField()
 
+    class Meta:
+        db_table = "schools"
+        verbose_name = "School"
+        verbose_name_plural = "Schools"
+
 
 class User(BaseModel, AbstractBaseUser, PermissionsMixin):
     class Role(models.TextChoices):

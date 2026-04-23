@@ -88,7 +88,7 @@ MonthlyReview
 
 ## 📦 Installation (Development Setup)
 
-git clone [Logbook360](https://github.com/NUCCASJNR/logbook360.git)
+``` git clone [Logbook360](https://github.com/NUCCASJNR/logbook360.git)```
 cd logbook360
 python -m venv venv
 source venv/bin/activate  # Linux/Mac

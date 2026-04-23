@@ -31,6 +31,10 @@ class DailyLog(BaseModel):
 
     supervisor_comment = models.TextField(null=True, blank=True)
 
+    class Meta:
+        db_table = "daily_logs"
+        verbose_name = "Daily Log"
+        verbose_name_plural = "Daily Logs"
 
     def __str__(self):
         return f"{self.date} - {self.title}"

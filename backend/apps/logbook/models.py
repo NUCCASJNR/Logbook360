@@ -36,6 +36,11 @@ class LogBook(BaseModel):
         related_name="logbooks"
     )
 
+    class Meta:
+        db_table = "logbooks"
+        verbose_name = "Logbook"
+        verbose_name_plural = "Logbooks"
+
 
     def __str__(self):
         return f"LogBook - {self.student.user.email}"

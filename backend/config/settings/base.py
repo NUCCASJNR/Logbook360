@@ -93,25 +93,31 @@ AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
     "utils.backends.CustomBackend"
 ]
+# REST_FRAMEWORK = {
+#     "DEFAULT_AUTHENTICATION_CLASSES": [
+#         "utils.auth.AccessTokenAuth"
+#         # "rest_framework_simplejwt.authentication.JWTAuthentication",
+#         # "rest_framework.authentication.TokenAuthentication",
+#         # "rest_framework.authentication.SessionAuthentication",
+#     ],
+#     "DEFAULT_PARSER_CLASSES": [
+#         "rest_framework.parsers.JSONParser",
+#         "rest_framework.parsers.FormParser",
+#         "rest_framework.parsers.MultiPartParser",
+#     ],
+#     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+#     "PAGE_SIZE": 15,
+#     'DEFAULT_THROTTLE_CLASSES': [
+#         'rest_framework.throttling.UserRateThrottle',
+#         'rest_framework.throttling.AnonRateThrottle',
+#     ],
+# }
 REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES": [
-        "utils.auth.AccessTokenAuth"
-        # "rest_framework_simplejwt.authentication.JWTAuthentication",
-        # "rest_framework.authentication.TokenAuthentication",
-        # "rest_framework.authentication.SessionAuthentication",
-    ],
-    "DEFAULT_PARSER_CLASSES": [
-        "rest_framework.parsers.JSONParser",
-        "rest_framework.parsers.FormParser",
-        "rest_framework.parsers.MultiPartParser",
-    ],
-    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
-    "PAGE_SIZE": 15,
-    'DEFAULT_THROTTLE_CLASSES': [
-        'rest_framework.throttling.UserRateThrottle',
-        'rest_framework.throttling.AnonRateThrottle',
-    ],
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    )
 }
+
 
 
 SWAGGER_SETTINGS = {
