@@ -2,26 +2,25 @@ from django.contrib.auth import get_user_model
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from apps.users.models import School
+from django.db import transaction
 
 User = get_user_model()
 
+
+@transaction.atomic
 def create_school_and_admin(data):
-    """
-    Creates a school and assigns the registering user as ADMIN.
-
-    Raises:
-        ValueError: If email already exists
-    """
-
     if User.objects.filter(email=data.email).exists():
-        raise ValueError("User with this email already exists")
+        raise ValueError("User already exists")
 
-    school = School.objects.create(name=data.school_name)
+    school = School.objects.create(**{
+        "name": data.school_name,
+        "address": data.address
+    })
 
-    user = User.objects.create(
+    user = User(
         email=data.email,
         role="ADMIN",
-        school=school,
+        school=school
     )
     user.set_password(data.password)
     user.save()
